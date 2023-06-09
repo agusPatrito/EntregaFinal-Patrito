@@ -1,0 +1,23 @@
+[
+    {
+      "nombre": " Supra Surfleash",
+      "imagen": "../images/leash1.png",
+      "precio": 10.99
+    },
+    {
+      "nombre": "Bodyboard",
+      "imagen": "../images/bodyboard.png",
+      "precio": 109.99
+    },
+    {
+      "nombre": "Supra Fins",
+      "imagen": "../images/fins.png",
+      "precio": 59.99
+    },
+    {
+      "nombre": "Surfboard Proto",
+      "imagen": "../images/surfboard2.png",
+      "precio": 349.99
+    }
+  ]
+  
