@@ -6,8 +6,6 @@ let itemsCarrito = [];
 function actualizarCarrito() {
   const listaCarrito = document.getElementById('cart-list');
   const cantidadTotal = document.getElementById('subtotal-amount');
-
- 
   listaCarrito.innerHTML = '';
 
   
@@ -17,8 +15,34 @@ function actualizarCarrito() {
     listaCarrito.appendChild(listaItems);
   });
 
+
   const subtotal = itemsCarrito.reduce((total, item) => total + item.precio, 0);
   cantidadTotal.textContent = `$${subtotal.toFixed(2)}`;
+
+  Swal.fire({
+    title: 'Item agregado',
+    text:  'El producto fue agregado al carrito.',
+    icon:'success',
+    timer: 1000,
+    showConfirmButton: false,
+  })
+  document.getElementById('confirmar-compra-boton').addEventListener('click', () =>{
+    Swal.fire({
+      title: 'Compra Confirmada',
+      text: 'Estas seguro que quieres confirmar la compra?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Confirmar',
+      cancelButtonText:  'Cancelar',
+      reverseButtons: true
+
+    }).then(result =>{
+      if (result.isConfirmed){
+        itemsCarrito = [];
+        actualizarCarrito();
+      }
+    })
+  })
 }
 
 
